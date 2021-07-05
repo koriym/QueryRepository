@@ -38,14 +38,9 @@ interface ResourceStorageInterface
     public function deleteEtag(AbstractUri $uri);
 
     /**
-     * Get resource cache
-     *
-     * return [$uri, $code, $headers, $body, $view]] array.
-     *
-     * @psalm-return ResourceState|null
-     * @phpstan-return array{0: AbstractUri, 1: int, 2:array<string, string>, 3: mixed, 4: null|string}|null
+     * Return cached resource state
      */
-    public function get(AbstractUri $uri);
+    public function get(AbstractUri $uri): ?ResourceState;
 
     /**
      * Save resource cache with value
